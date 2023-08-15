@@ -1,7 +1,7 @@
 'use client'
-import {useState} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import setAuthToken from '@/app/utils/setAuthToken';
 import jwtDecode from 'jwt-decode';
 
@@ -25,7 +25,7 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault(); // at the beginning of a submit function
 
-        axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/login`, {email, password})
+        axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/login`, { email, password })
             .then(response => {
                 localStorage.setItem('jwtToken', response.data.token);
                 localStorage.setItem('email', response.data.userData.email);
@@ -50,11 +50,11 @@ export default function Login() {
         return (
             <div>
 
-                <div className="card text-white bg-primary py-5 d-md-down-none" style={{width: "44%"}}>
+                <div className="card text-white bg-primary py-5 d-md-down-none" style={{ width: "44%" }}>
                     <div className="card-body text-center">
                         <div>
                             <p>Email already exists</p>
-                            <br/>
+                            <br />
                             <h2>Login</h2>
                             <p>Sign In to your account</p>
                             <a href="/users/login" type="button" className="btn btn-primary active mt-3">Login</a>
@@ -71,25 +71,25 @@ export default function Login() {
         <div className="flex items-center justify-center gap-40 h-screen w-full">
             <div className="min-w-[400px]">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <h1 className="text-3xl">Login</h1>
+                    <h1 className="text-3xl">Welcome to the Mom Network!</h1>
                     <p className="text-gray-700">Sign In to your account</p>
                     <div>
                         <input type="text" className="border border-gray-300 p-2 py-3 rounded-md w-full"
-                               placeholder="Email"
-                               value={email}
-                               onChange={handleEmail} required/>
+                            placeholder="Email"
+                            value={email}
+                            onChange={handleEmail} required />
                     </div>
                     <div>
                         <input type="password" className="border border-gray-300 p-2 py-3 rounded-md w-full"
-                               placeholder="Password" value={password}
-                               onChange={handlePassword} required/>
+                            placeholder="Password" value={password}
+                            onChange={handlePassword} required />
                     </div>
                     <button type="submit"
-                            className="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-3 w-full">Login
+                        className="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-3 w-full">Login
                     </button>
                 </form>
             </div>
-            <img src="/icon.svg" alt="..." width="600"/>
+            <img src="/icon.svg" alt="..." width="600" />
         </div>
     );
 }

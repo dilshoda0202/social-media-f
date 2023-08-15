@@ -71,7 +71,7 @@ const Signup = () => {
         <div className="flex items-center justify-center gap-40 h-screen w-full">
             <div className="min-w-[400px]">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <h1 className="text-3xl">Sign Up</h1>
+                    <h1 className="text-3xl">Welcome to the Mom Network!</h1>
                     <p className="text-gray-700">Create an account below to get started</p>
                     <div>
                         <input type="text" className="border border-gray-300 p-2 py-3 rounded-md w-full" placeholder="First Name"
