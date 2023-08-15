@@ -1,7 +1,7 @@
 'use client';
 
 
-import {UserCircle} from "@phosphor-icons/react";
+import { UserCircle } from "@phosphor-icons/react";
 
 function post(data) {
     return (
@@ -20,19 +20,19 @@ function post(data) {
 export default function Home() {
     const posts = [
         {
-            user: 'Dilshoda Abdualimova',
+            user: 'Dee',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam dui, posuere nec nisi sed, mollis pretium ante. Donec tempor arcu ex, ac ullamcorper sapien blandit eget. Sed vulputate dui augue, ac pulvinar risus convallis sed. Ut ac nulla purus. Phasellus tortor sem, vestibulum non ultricies id, scelerisque a metus. Etiam porttitor volutpat dolor, nec viverra diam euismod eget. Sed vehicula laoreet elit, nec porta leo consectetur nec. Nulla porta ipsum id nibh congue tincidunt. Phasellus sed magna tincidunt, imperdiet enim quis, eleifend dolor. Aenean mauris risus, hendrerit quis sapien sed, interdum aliquam felis. Duis pulvinar imperdiet tincidunt. Ut a leo id dui auctor placerat sit amet et mauris. Nulla non aliquet mauris, at volutpat velit.',
         },
         {
-            user: 'Dilshoda Abdualimova',
+            user: 'Dee',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam dui, posuere nec nisi sed, mollis pretium ante. Donec tempor arcu ex, ac ullamcorper sapien blandit eget. Sed vulputate dui augue, ac pulvinar risus convallis sed. Ut ac nulla purus. Phasellus tortor sem, vestibulum non ultricies id, scelerisque a metus. Etiam porttitor volutpat dolor, nec viverra diam euismod eget. Sed vehicula laoreet elit, nec porta leo consectetur nec. Nulla porta ipsum id nibh congue tincidunt. Phasellus sed magna tincidunt, imperdiet enim quis, eleifend dolor. Aenean mauris risus, hendrerit quis sapien sed, interdum aliquam felis. Duis pulvinar imperdiet tincidunt. Ut a leo id dui auctor placerat sit amet et mauris. Nulla non aliquet mauris, at volutpat velit.',
         },
         {
-            user: 'Dilshoda Abdualimova',
+            user: 'Dee',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam dui, posuere nec nisi sed, mollis pretium ante. Donec tempor arcu ex, ac ullamcorper sapien blandit eget. Sed vulputate dui augue, ac pulvinar risus convallis sed. Ut ac nulla purus. Phasellus tortor sem, vestibulum non ultricies id, scelerisque a metus. Etiam porttitor volutpat dolor, nec viverra diam euismod eget. Sed vehicula laoreet elit, nec porta leo consectetur nec. Nulla porta ipsum id nibh congue tincidunt. Phasellus sed magna tincidunt, imperdiet enim quis, eleifend dolor. Aenean mauris risus, hendrerit quis sapien sed, interdum aliquam felis. Duis pulvinar imperdiet tincidunt. Ut a leo id dui auctor placerat sit amet et mauris. Nulla non aliquet mauris, at volutpat velit.',
         },
         {
-            user: 'Dilshoda Abdualimova',
+            user: 'Dee',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam dui, posuere nec nisi sed, mollis pretium ante. Donec tempor arcu ex, ac ullamcorper sapien blandit eget. Sed vulputate dui augue, ac pulvinar risus convallis sed. Ut ac nulla purus. Phasellus tortor sem, vestibulum non ultricies id, scelerisque a metus. Etiam porttitor volutpat dolor, nec viverra diam euismod eget. Sed vehicula laoreet elit, nec porta leo consectetur nec. Nulla porta ipsum id nibh congue tincidunt. Phasellus sed magna tincidunt, imperdiet enim quis, eleifend dolor. Aenean mauris risus, hendrerit quis sapien sed, interdum aliquam felis. Duis pulvinar imperdiet tincidunt. Ut a leo id dui auctor placerat sit amet et mauris. Nulla non aliquet mauris, at volutpat velit.',
         },
     ];
@@ -42,11 +42,11 @@ export default function Home() {
     return (
         <div className="w-full">
             <div className="border border-gray-300 rounded-md w-full px-8 pt-8 pb-4">
-            <textarea className="w-full focus:outline-none" placeholder="What is on your mind?" rows="5"
-                      style={{resize: "none"}}>
-            </textarea>
+                <textarea className="w-full focus:outline-none" placeholder="What is on your mind?" rows="5"
+                    style={{ resize: "none" }}>
+                </textarea>
                 <div className="flex justify-end">
-                    <button className="bg-blue-600 hover:bg-blue-700 rounded-md text-white py-2 px-4">Post</button>
+                    <button type="submit" className="bg-blue-600 hover:bg-blue-700 rounded-md text-white py-2 px-4">Post</button>
                 </div>
             </div>
             <div className="flex flex-col gap-5 mt-10">
