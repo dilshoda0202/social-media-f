@@ -1,8 +1,7 @@
 'use client'
-import 'bootstrap/dist/css/bootstrap.css';
-import { useState } from 'react';
+import {useState} from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 
 const Signup = () => {
     const router = useRouter();
@@ -45,15 +44,17 @@ const Signup = () => {
             });
     };
 
-    if (redirect) { router.push('/users/login'); }
+    if (redirect) {
+        router.push('/users/login');
+    }
     if (error) {
         return (
             <div>
-                <div className="card text-white bg-primary py-5 d-md-down-none" style={{ width: "44%" }}>
+                <div className="card text-white bg-primary py-5 d-md-down-none" style={{width: "44%"}}>
                     <div className="card-body text-center">
                         <div>
                             <p>Email already exists</p>
-                            <br />
+                            <br/>
                             <h2>Login</h2>
                             <p>Sign In to your account</p>
                             <a href="/users/login" type="button" className="btn btn-primary active mt-3">Login</a>
@@ -67,67 +68,27 @@ const Signup = () => {
     }
 
     return (
-        <div className="container" style={{ background: "linear-gradient(to bottom, #98FB98, #FFC0CB)", height: '100vh', width: '100%' }}>
-            <br />
-            <br />
-            <br />
-            <br />
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card-group mb-0">
-                        <div className="card p-4" style={{ backgroundColor: "lightgreen" }}>
-                            <div className="card-body">
-                                <form onSubmit={handleSubmit}>
-                                    <img
-                                        src="/logo.png"
-                                        alt=""
-                                        style={{ width: '400px', height: '400px' }}
-                                    />
-                                    <h1>Sign Up</h1>
-                                    <p className="text-muted">Create an account below to get started</p>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-addon"><i className="fa fa-whatsapp"></i></span>
-                                        <input type="text" className="form-control" placeholder="First Name" value={firstName} onChange={handlefirstName} required />
-                                    </div>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-addon"><i className="fa fa-mail-forward" aria-hidden="true"></i></span>
-                                        <input type="email" className="form-control" placeholder="Email" value={email} onChange={handleEmail} required />
-                                    </div>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-                                        <input type="password" className="form-control" placeholder="Password" value={password} onChange={handlePassword} required />
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-6">
-                                            <button type="submit" className="btn btn-primary px-4">Sign Up</button>
-                                        </div>
-                                        <div className="col-6 text-right">
-                                            <button type="button" className="btn btn-link px-0">Forgot password?</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div className="card text-white bg-primary py-5 d-md-down-none" style={{ width: "44%" }}>
-                            <div className="card-body text-center">
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <div>
-                                    <h2>Login</h2>
-                                    <p>Sign In to your account</p>
-                                    <a href="/users/login" type="button" className="btn btn-primary active mt-3">Login</a>
-                                </div>
-                            </div>
-                        </div>
+        <div className="flex items-center justify-center gap-40 h-screen w-full">
+            <div className="min-w-[400px]">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    <h1 className="text-3xl">Sign Up</h1>
+                    <p className="text-gray-700">Create an account below to get started</p>
+                    <div>
+                        <input type="text" className="border border-gray-300 p-2 py-3 rounded-md w-full" placeholder="First Name"
+                               value={firstName} onChange={handlefirstName} required/>
                     </div>
-                </div>
+                    <div>
+                        <input type="email" className="border border-gray-300 p-2 py-3 rounded-md w-full" placeholder="Email" value={email}
+                               onChange={handleEmail} required/>
+                    </div>
+                    <div>
+                        <input type="password" className="border border-gray-300 p-2 py-3 rounded-md w-full" placeholder="Password"
+                               value={password} onChange={handlePassword} required/>
+                    </div>
+                    <button type="submit" className="bg-blue-600 text-white rounded-md py-3 w-full">Sign Up</button>
+                </form>
             </div>
+            <img src="/icon.svg" alt="..." width="600"/>
         </div>
     );
 };
