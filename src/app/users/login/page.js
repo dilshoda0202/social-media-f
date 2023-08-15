@@ -1,11 +1,9 @@
 'use client'
-import 'bootstrap/dist/css/bootstrap.css';
-import { useState } from 'react';
+import {useState} from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import setAuthToken from '@/app/utils/setAuthToken';
 import jwtDecode from 'jwt-decode';
-import Image from 'next/image';
 
 export default function Login() {
     const router = useRouter();
@@ -27,7 +25,7 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault(); // at the beginning of a submit function
 
-        axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/login`, { email, password })
+        axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/login`, {email, password})
             .then(response => {
 
                 localStorage.setItem('jwtToken', response.data.token);
@@ -46,16 +44,18 @@ export default function Login() {
 
     };
 
-    if (redirect) { router.push('/'); }
+    if (redirect) {
+        router.push('/');
+    }
     if (error) {
         return (
             <div>
 
-                <div className="card text-white bg-primary py-5 d-md-down-none" style={{ width: "44%" }}>
+                <div className="card text-white bg-primary py-5 d-md-down-none" style={{width: "44%"}}>
                     <div className="card-body text-center">
                         <div>
                             <p>Email already exists</p>
-                            <br />
+                            <br/>
                             <h2>Login</h2>
                             <p>Sign In to your account</p>
                             <a href="/users/login" type="button" className="btn btn-primary active mt-3">Login</a>
@@ -69,54 +69,25 @@ export default function Login() {
     }
 
     return (
-        <div className="container" style={{ background: "linear-gradient(to bottom, #98FB98, #FFC0CB)", height: '100vh', width: '100%' }}>
-            <img
-                src="/logo.png"
-                alt=""
-                style={{ width: '150px', height: '150px' }}
-            />
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card-group mb-0">
-                        <div className="card p-4" style={{ backgroundColor: "lightgreen" }}>
-                            <form className="card-body" onSubmit={handleSubmit}>
-                                <img
-                                    src="/logo.png"
-                                    alt=""
-                                    style={{ width: '400px', height: '400px' }}
-                                />
-                                <h1>Login</h1>
-                                <p className="text-muted">Sign In to your account</p>
-                                <div className="input-group mb-3">
-                                    <span className="input-group-addon"><i className="fa fa-user"></i></span>
-                                    <input type="text" className="form-control" placeholder="Email" value={email} onChange={handleEmail} required />
-                                </div>
-                                <div className="input-group mb-4">
-                                    <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-                                    <input type="password" className="form-control" placeholder="Password" alue={password} onChange={handlePassword} required />
-                                </div>
-                                <div className="row">
-                                    <div className="col-6">
-                                        <button type="submit" className="btn btn-primary px-4">Login</button>
-                                    </div>
-                                    <div className="col-6 text-right">
-                                        <button type="button" className="btn btn-link px-0">Forgot password?</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="card text-white bg-primary py-5 d-md-down-none" style={{ width: "44%" }}>
-                            <div className="card-body text-center">
-                                <div>
-                                    <h2>Sign up</h2>
-                                    <p>Get started now by creating an account.</p>
-                                    <a href="/users/signup" type="button" className="btn btn-primary active mt-3">Register Now!</a>
-                                </div>
-                            </div>
-                        </div>
+        <div className="flex items-center justify-center gap-40 h-screen w-full">
+            <div className="min-w-[400px]">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    <h1 className="text-3xl">Login</h1>
+                    <p className="text-gray-700">Sign In to your account</p>
+                    <div>
+                        <input type="text" className="border border-gray-300 p-2 py-3 rounded-md w-full" placeholder="Email"
+                               value={email}
+                               onChange={handleEmail} required/>
                     </div>
-                </div>
+                    <div>
+                        <input type="password" className="border border-gray-300 p-2 py-3 rounded-md w-full"
+                               placeholder="Password" value={password}
+                               onChange={handlePassword} required/>
+                    </div>
+                    <button type="submit" className="bg-blue-600 text-white rounded-md py-3 w-full">Login</button>
+                </form>
             </div>
+            <img src="/icon.svg" alt="..." width="600"/>
         </div>
     );
 }
