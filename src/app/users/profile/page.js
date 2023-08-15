@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import jwtDecode from 'jwt-decode';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import handleLogout from '@/app/utils/handleLogout';
 
 export default function Profile() {
@@ -49,57 +49,31 @@ export default function Profile() {
     if (!data) return <p>No data shown...</p>;
 
     return (
-        <div className="flex items-stretch justify-center gap-40 h-screen w-full">
-            <div className="main-body">
-                <div className="row gutters-sm">
-                    <div className="col-md-4 mb-3">
-                        <div className="container mx-auto">
-                            <div className="card-body">
-                                <div className="d-flex flex-column align-items-center text-center">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
-                                    <div className="mt-3">
-                                        <h4>{data.firstName} {data.lastName}</h4>
-                                        <p className="text-secondary mb-1">{data.jobTitle}</p>
-                                        {/* <p className="text-muted font-size-sm">{data.address.city}, {data.address.state}</p> */}
-                                        <button type="submit" className="bg-blue-600 text-white rounded-md py-3 w-full">Follow</button>
-                                        <button type="submit" className="bg-blue-600 text-white rounded-md py-3 w-full">Message</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container mx-auto">
-                        <div className="container mx-auto">
-                            <div className="card-body">
-                                <div className="row">
-                                    <div className="col-sm-3">
-                                        <h6 className="mb-0">Name: </h6>
-                                    </div>
-                                    <div className="col-sm-9 text-secondary">
-                                        {data.firstName} {data.lastName}
-                                    </div>
-                                </div>
-                                <hr />
-                                <div className="row">
-                                    <div className="col-sm-3">
-                                        <h6 className="mb-0">Email: </h6>
-                                    </div>
-                                    <div className="col-sm-9 text-secondary">
-                                        {data.email}
-                                    </div>
-                                </div>
-                                <hr />
-                                <div className="row">
-                                    <div className="col-sm-12">
-                                        <button type="submit" className="bg-blue-600 text-white rounded-md py-3 w-full">Edit</button>
-                                        {/* <a className="btn btn-info " target="__blank" href="/users/edit">Edit</a> */}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div className="flex justify-between">
+            <div className="1/3">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle"
+                     width="150"/>
+                <h4 className="text-3xl mt-4">{data.firstName} {data.lastName}</h4>
+            </div>
+            <div className="flex flex-col gap-5 w-2/3">
+                <div className="flex gap-4">
+                    <h6 className="text-gray-700">Name:</h6>
+                    <div>
+                        {data.firstName} {data.lastName}
                     </div>
                 </div>
+                <hr/>
+                <div className="flex gap-4">
+                    <h6 className="text-gray-700">Email:</h6>
+                    <div>
+                        {data.email}
+                    </div>
+                </div>
+                <hr/>
+                <button type="submit"
+                        className="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-3 w-full">
+                    Edit
+                </button>
             </div>
         </div>
     );

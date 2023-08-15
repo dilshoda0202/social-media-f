@@ -85,7 +85,7 @@ const Signup = () => {
                         <input type="password" className="border border-gray-300 p-2 py-3 rounded-md w-full" placeholder="Password"
                                value={password} onChange={handlePassword} required/>
                     </div>
-                    <button type="submit" className="bg-blue-600 text-white rounded-md py-3 w-full">Sign Up</button>
+                    <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-3 w-full">Sign Up</button>
                 </form>
             </div>
             <img src="/icon.svg" alt="..." width="600"/>
