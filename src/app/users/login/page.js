@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import setAuthToken from '@/app/utils/setAuthToken';
@@ -43,9 +43,16 @@ export default function Login() {
 
     };
 
-    if (redirect) {
-        router.push('/');
-    }
+    useEffect(
+        () => {
+            if (redirect) {
+                router.push('/');
+            }
+        },
+        [redirect]
+    )
+
+
     if (error) {
         return (
             <div>
