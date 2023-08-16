@@ -69,26 +69,23 @@ const NewPost = () => {
     };
 
     return (
-        <>
+        <div className="border border-gray-300 rounded-md w-full px-8 pt-8 pb-4">
             <form onSubmit={handleSubmit}>
-                <div className="form-group border border-gray-300 rounded-md p-5">
-                    <div className="flex gap-3 text-xl items-center">
-                        <label htmlFor="email">Content</label>
-                        <input autoFocus type="text" name="content" value={content} onChange={(e) => setContent(e.target.value)} className="form-control" />
-                        <button type="submit" className="bg-blue-600 hover:bg-blue-700 rounded-md text-white py-2 px-4">Post</button>
-                    </div>
+                <div className="flex gap-3 text-xl items-center">
+                    <label htmlFor="email">Content</label>
+                    <input autoFocus type="text" name="content" value={content} onChange={(e) => setContent(e.target.value)} className="form-control" />
+                    <button type="submit" className="bg-blue-600 hover:bg-blue-700 rounded-md text-white py-2 px-4">Post</button>
                 </div>
-
             </form>
 
             {posts.length > 0 && posts.map(post => (
-                <div key={post._id} style={{ height: "200px" }} >
+                <div key={post._id} className="flex flex-col gap-5 mt-10" >
                     <p>
                         {post.content}
                     </p>
                 </div>
             ))}
-        </>
+        </div>
     );
 }
 

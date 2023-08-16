@@ -90,7 +90,7 @@ const Signup = () => {
                 <br></br>
                 <p>Sign In to your account:</p>
                 <br></br>
-                <a href="/users/login" type="button" className="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-3 w-full">Login</a>
+                <a href="/users/login" type="submit" className="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-3 w-full">Login</a>
 
             </div>
             <img src="/icon.svg" alt="..." width="600" />

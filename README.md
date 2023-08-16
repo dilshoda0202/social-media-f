@@ -30,6 +30,7 @@ Visit:
 ## Future Goals/Unsolved Problems
 1. Improve UI/UX
 2. Edit and delete posts
-3. Comments feature
-4. Follow feature
-5. Messaging feature
+3. Display user image and name alongside posts
+4. Comments feature
+5. Follow feature
+6. Messaging feature
