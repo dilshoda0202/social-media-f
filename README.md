@@ -27,10 +27,9 @@ Visit:
 - MongoDB
 - Tailwind
 
-## Future Goals/Unsolved Problems
+## Future Goals
 1. Improve UI/UX
-2. Edit and delete posts
-3. Display user image and name alongside posts
-4. Comments feature
-5. Follow feature
-6. Messaging feature
+2. Posts: edit, delete, comment, user image, hashtags
+3. Follow and Message feature
+4. Search and filter based on hashtags, children of similar age
+5. User profile: info about childrens, general location, interests
